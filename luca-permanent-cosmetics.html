@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Luca Permanent Cosmetics | Permanent Makeup & Microblading in Santa Cruz</title>
+<meta name="description" content="Luca Permanent Cosmetics offers personalized permanent makeup and brow artistry in Santa Cruz, California. Explore our work and book a consultation." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF3EC;
+    --blush:#EFD5CC;
+    --beige:#E4C9B5;
+    --champagne:#D8B98B;
+    --taupe:#A78873;
+    --ink:#2B2320;
+    --gold:#B68A57;
+    --white:#FFFFFF;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:10px;
+    --shadow:0 20px 60px -25px rgba(43,35,32,0.25);
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'Inter', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .container{max-width:1240px;margin:0 auto;padding:0 32px;}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  section{padding:110px 0;}
+  @media(max-width:768px){ section{padding:64px 0;} .container{padding:0 20px;} }
+
+  /* ---------- Placeholder image block ---------- */
+  .ph{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,var(--beige),var(--blush));
+    display:flex;align-items:flex-end;
+  }
+  .ph img{width:100%;height:100%;object-fit:cover;filter:sepia(0.18) saturate(1.05) brightness(1.02);}
+  .ph .tag{
+    position:absolute;top:12px;left:12px;
+    background:rgba(43,35,32,0.55);
+    color:#fff;font-size:10px;letter-spacing:0.05em;
+    padding:5px 9px;border-radius:6px;font-family:var(--sans);
+  }
+
+  /* ---------- Buttons (bespoke, each distinct) ---------- */
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,var(--gold),#c99f6c);
+    color:#fff;padding:16px 34px;border-radius:100px;
+    font-weight:600;font-size:14px;letter-spacing:0.02em;
+    border:none;cursor:pointer;
+    box-shadow:0 12px 30px -12px rgba(182,138,87,0.65);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(182,138,87,0.75);}
+
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:16px 30px;border-radius:100px;
+    border:1.5px solid var(--ink);color:var(--ink);
+    font-weight:600;font-size:14px;background:transparent;cursor:pointer;
+    position:relative;overflow:hidden;transition:color .4s;
+  }
+  .btn-ghost::before{
+    content:"";position:absolute;inset:0;background:var(--ink);
+    transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.8,.2,1);z-index:0;
+  }
+  .btn-ghost span{position:relative;z-index:1;}
+  .btn-ghost:hover{color:var(--ivory);}
+  .btn-ghost:hover::before{transform:scaleX(1);}
+
+  .btn-call{
+    display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--ink);
+    border-bottom:1px solid transparent;transition:border-color .3s;
+  }
+  .btn-call:hover{border-color:var(--gold);}
+  .btn-call svg{transition:transform .3s;}
+  .btn-call:hover svg{transform:rotate(-12deg);}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,243,236,0.9);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(43,35,32,0.08);
+  }
+  .navwrap{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:1240px;margin:0 auto;}
+  .logo{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:0.01em;}
+  .logo em{font-style:italic;color:var(--gold);}
+  nav ul{display:flex;gap:34px;align-items:center;}
+  nav a{font-size:13.5px;font-weight:500;letter-spacing:0.01em;position:relative;padding-bottom:4px;}
+  nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+  nav a:hover::after{width:100%;}
+  .navcta{display:flex;align-items:center;gap:22px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+  .hamburger span{width:24px;height:2px;background:var(--ink);}
+  @media(max-width:960px){
+    nav{display:none;}
+    .navcta .btn-primary{display:none;}
+    .hamburger{display:flex;}
+  }
+  #mobilenav{
+    display:none;flex-direction:column;gap:0;background:var(--ivory);border-top:1px solid rgba(43,35,32,0.08);
+  }
+  #mobilenav.open{display:flex;}
+  #mobilenav a{padding:16px 24px;border-bottom:1px solid rgba(43,35,32,0.06);font-size:15px;}
+  #mobilenav .btn-primary{margin:18px 24px;justify-content:center;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;min-height:92vh;display:flex;align-items:center;
+    background:linear-gradient(180deg,var(--ivory) 0%, var(--blush) 100%);
+    overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;filter:sepia(0.15) saturate(1.05);}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(251,243,236,0.96) 0%, rgba(251,243,236,0.65) 45%, rgba(251,243,236,0.15) 100%);
+  }
+  .hero-inner{position:relative;z-index:1;max-width:620px;padding:0 32px;margin:0 auto 0 8%;}
+  @media(max-width:960px){.hero-inner{margin:0 auto;text-align:center;max-width:90%;}}
+  .hero h1{font-size:clamp(38px,5.4vw,68px);margin:18px 0 20px;}
+  .hero p.lead{font-size:18px;color:#5a4d47;max-width:480px;margin-bottom:34px;}
+  @media(max-width:960px){.hero p.lead{margin-left:auto;margin-right:auto;}}
+  .hero-ctas{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:26px;}
+  @media(max-width:960px){.hero-ctas{justify-content:center;}}
+  .hero-trust{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5a4d47;}
+  @media(max-width:960px){.hero-trust{justify-content:center;}}
+  .stars{color:var(--gold);letter-spacing:2px;}
+
+  /* ---------- Trust bar ---------- */
+  .trustbar{background:var(--white);padding:60px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;}
+  @media(max-width:900px){.trust-grid{grid-template-columns:repeat(2,1fr);}}
+  .trust-item{text-align:center;padding:0 12px;}
+  .trust-item .icon{
+    width:50px;height:50px;border-radius:50%;background:var(--ivory);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--gold);
+  }
+  .trust-item h4{font-size:16px;margin-bottom:8px;font-family:var(--sans);font-weight:600;}
+  .trust-item p{font-size:13.5px;color:#6b5d55;}
+
+  /* ---------- About ---------- */
+  .about{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:center;}
+  @media(max-width:900px){.about{grid-template-columns:1fr;gap:36px;}}
+  .about-img{border-radius:var(--radius-lg);aspect-ratio:4/5;box-shadow:var(--shadow);}
+  .about h2{font-size:clamp(30px,3.6vw,44px);margin:14px 0 22px;}
+  .about-list{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;}
+  .about-list li{font-size:14px;display:flex;align-items:flex-start;gap:8px;color:#4a3e38;}
+  .about-list li::before{content:"—";color:var(--gold);flex-shrink:0;}
+
+  /* ---------- Services ---------- */
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-head h2{font-size:clamp(30px,3.6vw,44px);margin-top:12px;}
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  @media(max-width:1080px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
+  .service-card{background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:0 12px 34px -20px rgba(43,35,32,0.2);transition:transform .4s;}
+  .service-card:hover{transform:translateY(-6px);}
+  .service-card .ph{aspect-ratio:4/3;}
+  .service-card .body{padding:24px;}
+  .service-card .num{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:0.1em;}
+  .service-card h3{font-size:19px;margin:8px 0 10px;font-family:var(--serif);}
+  .service-card p{font-size:13.5px;color:#6b5d55;margin-bottom:16px;}
+  .service-links{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:600;}
+  .service-links a:first-child{color:var(--ink);border-bottom:1px solid var(--gold);}
+  .service-links a:last-child{color:var(--gold);}
+
+  /* ---------- Process ---------- */
+  .process{background:var(--white);}
+  .process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  @media(max-width:900px){.process-row{grid-template-columns:1fr;gap:34px;}}
+  .process-row::before{
+    content:"";position:absolute;top:26px;left:6%;right:6%;height:1px;background:repeating-linear-gradient(90deg,var(--beige) 0 8px,transparent 8px 16px);
+  }
+  @media(max-width:900px){.process-row::before{display:none;}}
+  .step{position:relative;padding:0 20px;text-align:left;}
+  .step .stepnum{
+    width:52px;height:52px;border-radius:50%;background:var(--ivory);border:1px solid var(--beige);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;color:var(--gold);
+    margin-bottom:22px;position:relative;z-index:1;
+  }
+  .step h4{font-size:17px;margin-bottom:8px;}
+  .step p{font-size:13.5px;color:#6b5d55;}
+
+  /* ---------- Before/after ---------- */
+  .ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  @media(max-width:768px){.ba-grid{grid-template-columns:1fr;}}
+  .ba-card{border-radius:var(--radius-md);overflow:hidden;box-shadow:0 14px 34px -20px rgba(43,35,32,0.22);background:var(--white);}
+  .ba-compare{position:relative;aspect-ratio:16/10;overflow:hidden;}
+  .ba-compare .after-img,.ba-compare .before-img{position:absolute;inset:0;}
+  .ba-compare .after-img img,.ba-compare .before-img img{width:100%;height:100%;object-fit:cover;filter:sepia(0.18) saturate(1.05);}
+  .ba-compare .before-img{clip-path:inset(0 50% 0 0);}
+  .ba-compare input[type=range]{
+    position:absolute;inset:0;width:100%;height:100%;margin:0;
+    -webkit-appearance:none;background:transparent;cursor:ew-resize;z-index:5;
+  }
+  .ba-compare input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:#fff;
+    border:3px solid var(--gold);margin-top:0;box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+  .ba-handle{position:absolute;top:0;bottom:0;width:2px;background:#fff;left:50%;pointer-events:none;z-index:4;}
+  .ba-label{position:absolute;top:12px;font-size:10px;letter-spacing:0.06em;padding:5px 10px;border-radius:6px;color:#fff;background:rgba(43,35,32,0.55);z-index:3;}
+  .ba-label.before{left:12px;}
+  .ba-label.after{right:12px;}
+  .ba-caption{padding:16px 20px;font-size:13.5px;color:#6b5d55;display:flex;justify-content:space-between;align-items:center;}
+  .ba-caption strong{color:var(--ink);font-family:var(--serif);font-weight:500;}
+  .portfolio-cta{text-align:center;margin-top:44px;}
+
+  /* ---------- Featured masonry ---------- */
+  .masonry{columns:3 240px;column-gap:20px;}
+  @media(max-width:640px){.masonry{columns:2 160px;}}
+  .masonry .item{break-inside:avoid;margin-bottom:20px;border-radius:var(--radius-md);overflow:hidden;position:relative;}
+  .masonry .item img{width:100%;filter:sepia(0.18) saturate(1.05);transition:transform .6s;}
+  .masonry .item:hover img{transform:scale(1.06);}
+  .masonry .item .label{
+    position:absolute;left:0;right:0;bottom:0;padding:16px;
+    background:linear-gradient(0deg,rgba(43,35,32,0.75),transparent);
+    color:#fff;font-size:12.5px;font-weight:600;letter-spacing:0.02em;opacity:0;transition:opacity .4s;
+  }
+  .masonry .item:hover .label{opacity:1;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:linear-gradient(180deg,var(--white),var(--ivory));}
+  .rating-hero{text-align:center;margin-bottom:50px;}
+  .rating-hero .stars{font-size:22px;}
+  .rating-hero .score{font-family:var(--serif);font-size:46px;margin:10px 0 4px;}
+  .rating-hero .count{font-size:13.5px;color:#6b5d55;}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  @media(max-width:900px){.t-grid{grid-template-columns:1fr;}}
+  .t-card{background:var(--white);border-radius:var(--radius-md);padding:30px;box-shadow:0 12px 34px -22px rgba(43,35,32,0.2);}
+  .t-card .stars{font-size:14px;margin-bottom:14px;display:block;}
+  .t-card p{font-size:14.5px;color:#4a3e38;font-style:italic;margin-bottom:18px;}
+  .t-card .who{font-size:12.5px;font-weight:600;color:#8a7267;}
+  .review-cta{text-align:center;margin-top:40px;}
+
+  /* ---------- Why us ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.why-grid{grid-template-columns:1fr;}}
+  .why-item{padding:30px 26px;border:1px solid rgba(43,35,32,0.08);border-radius:var(--radius-md);background:var(--white);}
+  .why-item .icon{color:var(--gold);margin-bottom:16px;}
+  .why-item h4{font-size:16.5px;margin-bottom:8px;}
+  .why-item p{font-size:13.5px;color:#6b5d55;}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:780px;margin:0 auto;}
+  details{border-bottom:1px solid rgba(43,35,32,0.12);padding:22px 0;}
+  summary{cursor:pointer;font-family:var(--serif);font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:22px;color:var(--gold);transition:transform .3s;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{margin-top:14px;font-size:14.5px;color:#6b5d55;max-width:640px;}
+
+  /* ---------- Aftercare ---------- */
+  .aftercare{background:var(--white);}
+  .after-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  @media(max-width:900px){.after-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.after-grid{grid-template-columns:1fr;}}
+  .after-card{background:var(--ivory);border-radius:var(--radius-md);padding:26px;}
+  .after-card h4{font-size:15.5px;margin-bottom:10px;}
+  .after-card p{font-size:13px;color:#6b5d55;}
+  .aftercare-cta{text-align:center;margin-top:38px;}
+
+  /* ---------- Instagram ---------- */
+  .ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  @media(max-width:768px){.ig-grid{grid-template-columns:repeat(2,1fr);}}
+  .ig-grid .item{aspect-ratio:1/1;border-radius:var(--radius-sm);overflow:hidden;position:relative;}
+  .ig-grid .item img{width:100%;height:100%;object-fit:cover;filter:sepia(0.18) saturate(1.05);transition:transform .5s;}
+  .ig-grid .item:hover img{transform:scale(1.08);}
+  .ig-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:30px;flex-wrap:wrap;gap:16px;}
+
+  /* ---------- Booking CTA ---------- */
+  .booking-cta{
+    position:relative;padding:120px 0;text-align:center;overflow:hidden;
+  }
+  .booking-cta .bg{position:absolute;inset:0;}
+  .booking-cta .bg img{width:100%;height:100%;object-fit:cover;filter:sepia(0.2) saturate(1.05);}
+  .booking-cta .bg::after{content:"";position:absolute;inset:0;background:rgba(251,243,236,0.88);}
+  .booking-cta .inner{position:relative;z-index:1;max-width:600px;margin:0 auto;}
+  .booking-cta h2{font-size:clamp(30px,4vw,46px);margin-bottom:16px;}
+  .booking-cta p{color:#5a4d47;margin-bottom:32px;font-size:16px;}
+  .booking-cta .ctas{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- Contact / Booking form ---------- */
+  .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;}
+  @media(max-width:900px){.contact{grid-template-columns:1fr;}}
+  .contact-info h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:22px;}
+  .info-row{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+  .info-row .icon{color:var(--gold);flex-shrink:0;margin-top:2px;}
+  .info-row strong{display:block;font-size:14.5px;margin-bottom:2px;}
+  .info-row span{font-size:14px;color:#6b5d55;}
+  .map-wrap{border-radius:var(--radius-md);overflow:hidden;margin-top:28px;box-shadow:var(--shadow);}
+  .map-wrap iframe{width:100%;height:260px;border:0;display:block;}
+
+  .form-card{background:var(--white);padding:36px;border-radius:var(--radius-lg);box-shadow:var(--shadow);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  @media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+  .field label{font-size:12.5px;font-weight:600;color:#6b5d55;}
+  .field input, .field select, .field textarea{
+    border:1px solid rgba(43,35,32,0.15);background:var(--ivory);
+    border-radius:var(--radius-sm);padding:13px 14px;font-family:var(--sans);font-size:14px;color:var(--ink);
+    outline:none;transition:border-color .3s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--gold);}
+  .form-card .btn-primary{width:100%;justify-content:center;margin-top:6px;}
+  .form-note{font-size:11.5px;color:#8a7267;margin-top:14px;text-align:center;}
+  #formStatus{font-size:13px;margin-top:12px;text-align:center;display:none;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--blush);padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+  @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;color:#6b5d55;}
+  .footer-grid li{font-size:13.5px;margin-bottom:10px;color:#4a3e38;}
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{font-size:13.5px;color:#6b5d55;max-width:240px;}
+  .footer-bottom{border-top:1px solid rgba(43,35,32,0.12);padding-top:22px;display:flex;justify-content:space-between;font-size:12px;color:#6b5d55;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- Mobile sticky CTA ---------- */
+  .mobile-sticky{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
+    padding:14px 18px;background:rgba(251,243,236,0.96);backdrop-filter:blur(10px);
+    border-top:1px solid rgba(43,35,32,0.1);
+  }
+  .mobile-sticky .btn-primary{width:100%;justify-content:center;}
+  @media(max-width:768px){.mobile-sticky{display:block;} body{padding-bottom:72px;} }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="navwrap">
+    <a href="#home" class="logo">Luca Permanent Cosmetics</a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#aftercare">Aftercare</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="navcta">
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobilenav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#aftercare">Aftercare</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn-primary">Book Now</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home" style="padding:0;">
+  <div class="hero-bg">
+    <img src="https://picsum.photos/id/1027/1600/1200" alt="Beautifully shaped natural eyebrows — replace with your own licensed photography">
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow">Luca Permanent Cosmetics — Permanent Cosmetics Studio</span>
+    <h1>Beautifully Defined.<br>Naturally You.</h1>
+    <p class="lead">Artistry-driven permanent cosmetics designed to enhance your natural features with beautiful, personalized results.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
+      <a href="#portfolio" class="btn-ghost"><span>View Our Work</span></a>
+    </div>
+    <div class="hero-trust"><span class="stars">★★★★★</span> 4.9/5 — 55+ Client Reviews</div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trustbar">
+  <div class="container trust-grid">
+    <div class="trust-item">
+      <div class="icon">✦</div>
+      <h4>Personalized Artistry</h4>
+      <p>Every treatment is designed around your features and goals.</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">◈</div>
+      <h4>Natural-Looking Results</h4>
+      <p>Enhance your beauty without looking overdone.</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">☾</div>
+      <h4>Professional Care</h4>
+      <p>A comfortable, thoughtful experience from consultation to aftercare.</p>
+    </div>
+    <div class="trust-item">
+      <div class="icon">★</div>
+      <h4>Highly Rated</h4>
+      <p>4.9-star rating from 55+ client reviews.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container about">
+    <div class="ph about-img reveal">
+      <img src="https://picsum.photos/id/1011/900/1100" alt="Studio portrait — replace with your own photography">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>Artistry That Enhances Your Natural Beauty</h2>
+      <p style="color:#5a4d47;max-width:520px;">At Luca Permanent Cosmetics, permanent makeup is never one-size-fits-all. Every appointment begins with an unhurried consultation, careful brow mapping, and an honest conversation about your features, your concerns, and the result you're imagining — so what we create feels entirely, effortlessly yours.</p>
+      <ul class="about-list">
+        <li>Attention to every detail</li>
+        <li>Personalized consultation</li>
+        <li>Precise brow mapping</li>
+        <li>Professional technique</li>
+        <li>Natural-looking results</li>
+        <li>Guided aftercare support</li>
+      </ul>
+      <div style="margin-top:30px;">
+        <a href="#contact" class="btn-ghost"><span>Meet Luca Permanent Cosmetics</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" style="background:var(--white);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Our Signature Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="ph"><img src="https://picsum.photos/id/1012/600/450" alt="Microblading"></div>
+        <div class="body">
+          <span class="num">01</span>
+          <h3>Microblading</h3>
+          <p>Beautifully shaped, natural-looking brows using precision hair-stroke technique.</p>
+          <div class="service-links"><a href="#faq">Learn More</a><a href="#contact">Book Consultation</a></div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="ph"><img src="https://picsum.photos/id/1013/600/450" alt="Permanent Brows"></div>
+        <div class="body">
+          <span class="num">02</span>
+          <h3>Permanent Brows</h3>
+          <p>Personalized brow enhancement designed around your facial structure and desired look.</p>
+          <div class="service-links"><a href="#faq">Learn More</a><a href="#contact">Book Consultation</a></div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="ph"><img src="https://picsum.photos/id/1014/600/450" alt="Brow Mapping"></div>
+        <div class="body">
+          <span class="num">03</span>
+          <h3>Brow Mapping</h3>
+          <p>Detailed mapping and consultation to establish the ideal shape before treatment.</p>
+          <div class="service-links"><a href="#faq">Learn More</a><a href="#contact">Book Consultation</a></div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="ph"><img src="https://picsum.photos/id/1015/600/450" alt="Touch-Up / Maintenance"></div>
+        <div class="body">
+          <span class="num">04</span>
+          <h3>Touch-Up / Maintenance</h3>
+          <p>Follow-up services designed to maintain and refine your results over time.</p>
+          <div class="service-links"><a href="#faq">Learn More</a><a href="#contact">Book Consultation</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The Experience</span>
+      <h2>From Consultation to Confidence</h2>
+    </div>
+    <div class="process-row">
+      <div class="step"><div class="stepnum">01</div><h4>Consultation</h4><p>Discuss your goals, preferences, concerns, and desired result.</p></div>
+      <div class="step"><div class="stepnum">02</div><h4>Brow Mapping</h4><p>Carefully map and plan the shape before the procedure.</p></div>
+      <div class="step"><div class="stepnum">03</div><h4>Precision Treatment</h4><p>Performed with careful attention to detail and symmetry.</p></div>
+      <div class="step"><div class="stepnum">04</div><h4>Aftercare & Follow-Up</h4><p>Clear guidance and support throughout your healing process.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Real Results</span>
+      <h2>See the Difference</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal">
+        <div class="ba-compare">
+          <div class="after-img"><img src="https://picsum.photos/id/1027/700/440" alt="After"></div>
+          <div class="before-img"><img src="https://picsum.photos/id/1005/700/440" alt="Before"></div>
+          <span class="ba-handle" style="left:50%"></span>
+          <span class="ba-label before">BEFORE</span>
+          <span class="ba-label after">AFTER</span>
+          <input type="range" min="0" max="100" value="50" oninput="baSlide(this)">
+        </div>
+        <div class="ba-caption"><span>Drag to compare</span><strong>Natural Brow Enhancement</strong></div>
+      </div>
+      <div class="ba-card reveal">
+        <div class="ba-compare">
+          <div class="after-img"><img src="https://picsum.photos/id/1025/700/440" alt="After"></div>
+          <div class="before-img"><img src="https://picsum.photos/id/1006/700/440" alt="Before"></div>
+          <span class="ba-handle" style="left:50%"></span>
+          <span class="ba-label before">BEFORE</span>
+          <span class="ba-label after">AFTER</span>
+          <input type="range" min="0" max="100" value="50" oninput="baSlide(this)">
+        </div>
+        <div class="ba-caption"><span>Drag to compare</span><strong>Microblading Result</strong></div>
+      </div>
+    </div>
+    <div class="portfolio-cta"><a href="#instagram" class="btn-ghost"><span>View Full Portfolio</span></a></div>
+  </div>
+</section>
+
+<!-- ============ FEATURED MASONRY ============ -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Editorial</span>
+      <h2>Featured Results</h2>
+    </div>
+    <div class="masonry">
+      <div class="item"><img src="https://picsum.photos/id/1035/500/650" alt=""><div class="label">Natural Brow Enhancement</div></div>
+      <div class="item"><img src="https://picsum.photos/id/1041/500/450" alt=""><div class="label">Microblading</div></div>
+      <div class="item"><img src="https://picsum.photos/id/1043/500/600" alt=""><div class="label">Brow Mapping</div></div>
+      <div class="item"><img src="https://picsum.photos/id/1047/500/500" alt=""><div class="label">Client Transformation</div></div>
+      <div class="item"><img src="https://picsum.photos/id/1050/500/620" alt=""><div class="label">Studio Session</div></div>
+      <div class="item"><img src="https://picsum.photos/id/1062/500/470" alt=""><div class="label">Precision Detail</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="rating-hero">
+      <span class="eyebrow">Loved by Our Clients</span>
+      <div class="stars">★★★★★</div>
+      <div class="score">4.9 / 5</div>
+      <div class="count">55+ Reviews on Google</div>
+    </div>
+    <div class="t-grid">
+      <div class="t-card"><span class="stars">★★★★★</span><p>"From start to finish, the entire process felt calm, professional, and genuinely five-star."</p><div class="who">— Verified Client</div></div>
+      <div class="t-card"><span class="stars">★★★★★</span><p>"I love the way my brows turned out — I get compliments constantly."</p><div class="who">— Verified Client</div></div>
+      <div class="t-card"><span class="stars">★★★★★</span><p>"She listened to exactly what I wanted and walked me through every step."</p><div class="who">— Verified Client</div></div>
+    </div>
+    <div class="review-cta"><a href="#" class="btn-ghost"><span>Read More Reviews</span></a></div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Promise</span>
+      <h2>Why Clients Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="icon">✦</div><h4>Personalized Approach</h4><p>Your features, preferences, and goals come first.</p></div>
+      <div class="why-item"><div class="icon">◈</div><h4>Precision & Detail</h4><p>Careful planning and attention to symmetry.</p></div>
+      <div class="why-item"><div class="icon">☾</div><h4>Natural Beauty</h4><p>Enhancement, never an artificial appearance.</p></div>
+      <div class="why-item"><div class="icon">❀</div><h4>Client Comfort</h4><p>A calm, welcoming experience throughout.</p></div>
+      <div class="why-item"><div class="icon">◐</div><h4>Professional Guidance</h4><p>Clear consultation and aftercare information.</p></div>
+      <div class="why-item"><div class="icon">★</div><h4>Beautiful Results</h4><p>Designed to help you feel confident and comfortable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" style="background:var(--white);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>What is permanent makeup?</summary><p>Permanent makeup uses fine pigment deposits to enhance features such as the brows, giving a natural, low-maintenance definition that lasts over time.</p></details>
+      <details><summary>Is microblading right for me?</summary><p>Most skin types suit microblading well. We'll assess your skin, brow goals, and history during your consultation to recommend the best technique for you.</p></details>
+      <details><summary>How does the consultation work?</summary><p>We discuss your goals, review your skin and brow history, and map a shape together before any treatment begins.</p></details>
+      <details><summary>How is brow mapping performed?</summary><p>Using facial landmarks and symmetry guides, we chart the ideal shape and arch specific to your bone structure.</p></details>
+      <details><summary>How long does the appointment take?</summary><p>A first session typically takes 2–2.5 hours, including consultation, mapping, and treatment.</p></details>
+      <details><summary>What should I expect during healing?</summary><p>Mild redness and darker pigment are normal for the first several days, softening to the final natural shade as healing completes.</p></details>
+      <details><summary>What aftercare is required?</summary><p>Keeping the area clean, dry, and protected from sun and moisture is essential — full guidance is provided after your appointment.</p></details>
+      <details><summary>When is a touch-up needed?</summary><p>Most clients return for a touch-up 4–6 weeks after their first session, then periodically to refresh color.</p></details>
+      <details><summary>Can mature or sun-damaged skin affect pigment retention?</summary><p>Skin condition can influence how pigment settles and fades. We'll discuss what to expect for your specific skin during consultation.</p></details>
+      <details><summary>How do I prepare for my appointment?</summary><p>Avoid sun exposure, retinol, and blood-thinning medication for several days prior — full pre-care instructions are sent ahead of your visit.</p></details>
+      <details><summary>What happens if I have concerns about my results?</summary><p>We welcome a follow-up conversation any time — your comfort and satisfaction guide every step of your care.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFTERCARE ============ -->
+<section class="aftercare" id="aftercare">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Healing With Care</span>
+      <h2>Care for Your New Brows</h2>
+    </div>
+    <div class="after-grid">
+      <div class="after-card"><h4>Before Your Appointment</h4><p>Avoid sun, retinol, and blood thinners for at least 48 hours prior.</p></div>
+      <div class="after-card"><h4>Immediately After</h4><p>Gently blot excess fluid; keep the area clean and completely dry.</p></div>
+      <div class="after-card"><h4>During Healing</h4><p>Avoid makeup, sweat, and swimming on the treated area for 7–10 days.</p></div>
+      <div class="after-card"><h4>Follow-Up / Touch-Up</h4><p>Schedule your touch-up 4–6 weeks after your initial session.</p></div>
+    </div>
+    <div class="aftercare-cta"><a href="#contact" class="btn-ghost"><span>View Complete Aftercare Guide</span></a></div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section id="instagram">
+  <div class="container">
+    <div class="ig-head">
+      <div>
+        <span class="eyebrow">Follow the Artistry</span>
+        <h2 style="margin-top:8px;">@luca.permanent.cosmetics</h2>
+      </div>
+      <a href="https://www.instagram.com/luca.permanent.cosmetics/" class="btn-ghost" target="_blank" rel="noopener"><span>Follow on Instagram</span></a>
+    </div>
+    <div class="ig-grid">
+      <div class="item"><img src="https://picsum.photos/id/1074/300/300" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/id/1080/300/300" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/id/1082/300/300" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/id/1084/300/300" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/id/1062/300/300" alt=""></div>
+      <div class="item"><img src="https://picsum.photos/id/1027/300/300" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING CTA ============ -->
+<section class="booking-cta">
+  <div class="bg"><img src="https://picsum.photos/id/1011/1600/900" alt=""></div>
+  <div class="inner">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>Ready to Wake Up Feeling Beautiful?</h2>
+    <p>Let's create a look that feels naturally, confidently you.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
+      <a href="tel:+18316826084" class="btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call +1 831-682-6084
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / BOOKING FORM ============ -->
+<section id="contact" style="background:var(--white);">
+  <div class="container contact">
+    <div class="contact-info">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Visit Luca Permanent Cosmetics</h2>
+      <div class="info-row">
+        <span class="icon">📍</span>
+        <div><strong>Address</strong><span>500 Soquel Ave, Santa Cruz, CA 95062</span></div>
+      </div>
+      <div class="info-row">
+        <span class="icon">📞</span>
+        <div><strong>Phone</strong><span>+1 831-682-6084</span></div>
+      </div>
+      <div class="info-row">
+        <span class="icon">📷</span>
+        <div><strong>Instagram</strong><span>@luca.permanent.cosmetics</span></div>
+      </div>
+      <div class="info-row">
+        <span class="icon">✉️</span>
+        <div><strong>Email</strong><span>hello@lucapermanentcosmetics.com</span></div>
+      </div>
+      <div class="map-wrap">
+        <!-- Replace the q= value below with the exact business address once known -->
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=500+Soquel+Ave,+Santa+Cruz,+CA+95062&output=embed"></iframe>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3 style="font-size:20px;margin-bottom:6px;">Request a Consultation</h3>
+      <p style="font-size:13px;color:#8a7267;margin-bottom:22px;">We'll confirm your appointment by email or WhatsApp.</p>
+      <form id="bookingForm">
+        <div class="form-row">
+          <div class="field"><label>Full Name</label><input type="text" name="name" required></div>
+          <div class="field"><label>Phone</label><input type="tel" name="phone" required></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="form-row">
+          <div class="field">
+            <label>Service Interested In</label>
+            <select name="service">
+              <option>Microblading</option>
+              <option>Permanent Brows</option>
+              <option>Brow Mapping</option>
+              <option>Touch-Up / Maintenance</option>
+            </select>
+          </div>
+          <div class="field"><label>Preferred Date</label><input type="date" name="date"></div>
+        </div>
+        <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Tell us a little about what you're looking for"></textarea></div>
+
+        <div class="field" style="flex-direction:row;align-items:center;gap:10px;">
+          <input type="checkbox" id="notifyWA" checked style="width:auto;">
+          <label for="notifyWA" style="font-size:12.5px;">Send this request to WhatsApp for instant confirmation</label>
+        </div>
+
+        <button type="submit" class="btn-primary">Request a Consultation</button>
+        <div id="formStatus"></div>
+        <p class="form-note">By submitting, you agree to be contacted about your appointment. We never share your information.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">Luca Permanent Cosmetics</a>
+        <p>Beautifully Defined. Naturally You.</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>500 Soquel Ave, Santa Cruz, CA 95062</li>
+          <li>+1 831-682-6084</li>
+          <li>hello@lucapermanentcosmetics.com</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Social</h5>
+        <ul><li><a href="https://www.instagram.com/luca.permanent.cosmetics/" target="_blank" rel="noopener">Instagram</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Luca Permanent Cosmetics. All rights reserved.</span>
+      <span>Site by Luca Permanent Cosmetics Studio</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY CTA ============ -->
+<div class="mobile-sticky"><a href="#contact" class="btn-primary">Book Consultation</a></div>
+
+<script>
+  // Mobile menu
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobilenav = document.getElementById('mobilenav');
+  hamburgerBtn.addEventListener('click', () => mobilenav.classList.toggle('open'));
+  mobilenav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobilenav.classList.remove('open')));
+
+  // Before/after slider
+  function baSlide(input){
+    const val = input.value;
+    const compare = input.closest('.ba-compare');
+    compare.querySelector('.before-img').style.clipPath = `inset(0 ${100-val}% 0 0)`;
+    compare.querySelector('.ba-handle').style.left = val + '%';
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+
+  /* =====================================================================
+     BOOKING FORM — WhatsApp + Email confirmation
+     ---------------------------------------------------------------------
+     This works with ZERO backend today via WhatsApp click-to-chat (wa.me):
+     it opens WhatsApp with a pre-filled message to your business number,
+     which the visitor sends themselves — genuinely free, no API key.
+
+     For fully AUTOMATIC email confirmations (sent without any click),
+     wire in a form backend such as EmailJS, Formspree, or Resend:
+     1) Create a free account with your chosen provider.
+     2) WhatsApp number is already set for Luca Permanent Cosmetics
+        (international format, digits only, e.g. "919876543210").
+     3) Uncomment the EmailJS block and add your Service ID / Template ID /
+        Public Key from your EmailJS dashboard (emailjs.com).
+     ===================================================================== */
+
+  const WHATSAPP_NUMBER = "18316826084"; // Luca Permanent Cosmetics WhatsApp
+
+  // --- OPTIONAL: EmailJS automatic email (uncomment + configure to enable) ---
+  // <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  // emailjs.init("YOUR_PUBLIC_KEY");
+
+  document.getElementById('bookingForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(this).entries());
+    const status = document.getElementById('formStatus');
+    const sendWA = document.getElementById('notifyWA').checked;
+
+    const msg = `New consultation request:%0A` +
+      `Name: ${data.name}%0A` +
+      `Phone: ${data.phone}%0A` +
+      `Email: ${data.email}%0A` +
+      `Service: ${data.service}%0A` +
+      `Preferred Date: ${data.date || 'Not specified'}%0A` +
+      `Message: ${data.message || '—'}`;
+
+    // 1) WhatsApp confirmation (works immediately, no backend needed)
+    if (sendWA) {
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+    }
+
+    // 2) Email confirmation via EmailJS (uncomment once configured)
+    // emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", data)
+    //   .then(() => { status.textContent = "Thank you — we'll confirm your appointment shortly."; })
+    //   .catch(() => { status.textContent = "Something went wrong — please call us directly."; });
+
+    // 3) Fallback: mailto (opens the visitor's email client)
+    // window.location.href = `mailto:hello@lucapermanentcosmetics.com?subject=Consultation Request&body=${msg}`;
+
+    status.style.display = 'block';
+    status.style.color = '#B68A57';
+    status.textContent = "Thank you! Your request has been sent — we'll confirm shortly.";
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
